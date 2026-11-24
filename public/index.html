@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Splitto · Dividi le spese con gli amici, senza account</title>
+<meta name="description" content="Splitto divide le spese di gruppo in pochi secondi: viaggi, cene, coinquilini. Nessuna registrazione, nessuna app. Crea il gruppo, manda il link e scopri chi deve quanto a chi.">
+<link rel="canonical" href="/">
+<meta name="theme-color" content="#09090a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Splitto · Dividi le spese, senza account">
+<meta property="og:description" content="Crea un gruppo, manda il link e Splitto vi dice chi deve quanto a chi.">
+<meta property="og:image" content="/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Splitto","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"description":"Dividi le spese di gruppo senza account: viaggi, cene, coinquilini."}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#">Splitto</a>
+    <div class="lang" role="group" aria-label="Lingua / Language"><button id="l-it">IT</button><button id="l-en">EN</button></div>
+    <button class="pill gold" id="premBtn" hidden>Premium</button>
+  </header>
+  <main id="app"><noscript><p style="padding:40px 0">Splitto ha bisogno di JavaScript per funzionare.</p></noscript></main>
+  <footer class="foot" id="foot"></footer>
+</div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true"><div class="box" id="sheetBox"></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="/assets/jspdf.umd.min.js" defer></script>
+<script src="/assets/app.js" defer></script>
+</body>
+</html>

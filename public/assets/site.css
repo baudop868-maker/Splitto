@@ -1,0 +1,160 @@
+@font-face{font-family:Manrope;font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Manrope;font-weight:500 600;font-display:swap;src:url(/assets/fonts/manrope-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Manrope;font-weight:700;font-display:swap;src:url(/assets/fonts/manrope-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Manrope;font-weight:800;font-display:swap;src:url(/assets/fonts/manrope-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-weight:500 700;font-display:swap;src:url(/assets/fonts/bodoni-moda-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:500 700;font-display:swap;src:url(/assets/fonts/bodoni-moda-latin-500-italic.woff2) format("woff2")}
+
+:root{color-scheme:dark;--bg:#09090a;--s1:#121214;--s2:#1a1a1d;--line:#2a2a2e;--ink:#f2ede3;--mute:#9b968c;--gold:#c9a45c;--gold2:#ead19a;--pos:#8cc49a;--neg:#e08b7c}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Manrope,system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit;color:inherit}
+a{color:var(--gold2)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 max(4vw,16px)}
+.top{display:flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid var(--line)}
+.logo{font:italic 500 26px/1 'Bodoni Moda',serif;letter-spacing:.02em;color:var(--gold2);text-decoration:none;margin-right:auto}
+.pill{background:none;border:1px solid var(--line);border-radius:999px;padding:8px 14px;min-height:40px;cursor:pointer;font-size:14px;font-weight:600}
+.pill:hover,.pill:focus-visible{border-color:var(--gold)}
+.pill.gold{border-color:var(--gold);color:var(--gold2)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;padding:8px 11px;min-height:40px;cursor:pointer;font-size:13px;font-weight:700;color:var(--mute)}
+.lang button[aria-pressed=true]{color:var(--bg);background:var(--gold)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
+h1{font:500 clamp(32px,6vw,50px)/1.05 'Bodoni Moda',serif;margin:0 0 12px;text-wrap:balance}
+h2{font:600 20px/1.2 Manrope,sans-serif;margin:0 0 14px}
+.lead{color:var(--mute);font-size:17px;max-width:34em;margin:0}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;padding:clamp(28px,5vw,56px) 0}
+@media(max-width:760px){.hero{grid-template-columns:minmax(0,1fr)}}
+/* the card */
+.card{position:relative;border-radius:22px;padding:clamp(20px,4vw,30px);background:radial-gradient(120% 90% at 85% 0%,#2b2a28 0%,#141414 45%,#0b0b0c 100%);border:1px solid #3a352a;box-shadow:0 30px 60px -20px #000,inset 0 1px 0 #ffffff14;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,#ffffff05 0 1px,transparent 1px 4px);pointer-events:none}
+.card::after{content:"";position:absolute;inset:-40% -10% auto auto;width:70%;height:120%;background:linear-gradient(115deg,transparent 40%,#ead19a12 50%,transparent 60%);pointer-events:none}
+.cardhead{display:flex;align-items:center;gap:12px;margin-bottom:18px;position:relative}
+.chip{width:42px;height:32px;border-radius:7px;background:linear-gradient(135deg,#f0d9a4,#b38b45 55%,#e3c587);box-shadow:inset 0 0 0 1px #00000040}
+.cardmark{font:italic 500 20px/1 'Bodoni Moda',serif;color:var(--gold2);margin-left:auto}
+.cardlabel{font-size:13px;color:var(--mute);font-weight:600}
+.debt{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;align-items:center;padding:14px 0;border-top:1px solid #ffffff12}
+.debt:first-of-type{border-top:0}
+.debt p{margin:0;font-size:17px}
+.debt b{font-weight:700;color:var(--ink)}
+.debt .amt{font:700 clamp(24px,5vw,32px)/1.1 Manrope,sans-serif;color:var(--gold2);white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums}
+.debt .btn-sm{grid-column:1/-1;justify-self:start}
+.card .even{position:relative;font:500 24px/1.25 'Bodoni Moda',serif;margin:6px 0}
+.sample{position:relative;font-size:13px;color:var(--mute);margin:10px 0 0}
+/* panels */
+.panel{background:var(--s1);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,3vw,26px)}
+.grid2{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;padding-bottom:28px}
+@media(max-width:760px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.stack{display:grid;gap:20px}
+label{display:block;font-size:14px;font-weight:600;color:var(--mute);margin:0 0 6px}
+.field{margin-bottom:16px}
+input,select{width:100%;background:var(--s2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-height:48px;font-size:16px}
+input:focus,select:focus{border-color:var(--gold);outline:none}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row>input{flex:1 1 140px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:14px;padding:12px 20px;min-height:50px;border:1px solid var(--line);background:var(--s2);cursor:pointer;font-weight:700;font-size:16px;text-decoration:none;color:var(--ink)}
+.btn.primary{background:linear-gradient(180deg,#e3c587,#c09a52);border-color:#d8b874;color:#15120b}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn.block{width:100%}
+.btn-sm{background:none;border:1px solid #ffffff26;border-radius:999px;padding:6px 14px;min-height:40px;font-size:14px;font-weight:600;cursor:pointer;color:var(--ink)}
+.btn-sm:hover{border-color:var(--gold)}
+.btn-sm.danger{color:var(--neg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--s2);border:1px solid var(--line);border-radius:999px;padding:6px 8px 6px 14px;font-size:15px}
+.tag button{background:none;border:0;color:var(--mute);cursor:pointer;width:30px;height:30px;border-radius:50%;font-size:18px;line-height:1}
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:var(--s2);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px}
+.seg button{border:0;background:none;border-radius:9px;min-height:42px;cursor:pointer;font-size:14px;font-weight:600;color:var(--mute)}
+.seg button[aria-pressed=true]{background:var(--gold);color:#15120b}
+.catpick button{background:var(--s2);border:1px solid var(--line);border-radius:999px;padding:8px 14px;min-height:42px;cursor:pointer;font-size:14px;font-weight:600}
+.catpick button[aria-pressed=true]{border-color:var(--gold);color:var(--gold2)}
+.muted{color:var(--mute)}
+.small{font-size:14px}
+.err{color:var(--neg);font-size:14px;min-height:20px;margin:6px 0 0}
+.list{list-style:none;margin:0;padding:0}
+.list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:14px 0;border-top:1px solid var(--line);align-items:center}
+.list li:first-child{border-top:0}
+.list .t{font-weight:700}
+.list .s{color:var(--mute);font-size:14px}
+.list .n{text-align:right;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.list .acts{grid-column:1/-1}
+.recent a{display:flex;justify-content:space-between;gap:10px;padding:14px 0;border-top:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:600}
+.recent a:first-child{border-top:0}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}
+.stat{background:var(--s1);border:1px solid var(--line);border-radius:16px;padding:14px}
+.stat span{display:block;font-size:13px;color:var(--mute);font-weight:600}
+.stat strong{font-size:clamp(17px,4vw,22px);white-space:nowrap;font-variant-numeric:tabular-nums}
+.bar{display:grid;grid-template-columns:minmax(80px,8em) minmax(0,1fr) auto;gap:12px;align-items:center;padding:9px 0}
+.bar .track{height:10px;background:var(--s2);border-radius:99px;overflow:hidden}
+.bar .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#b38b45,#ead19a)}
+.bar .fill.neg{background:var(--neg)}.bar .fill.pos{background:var(--pos)}
+.bar .v{font-weight:700;white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums;font-size:15px}
+.pos{color:var(--pos)}.neg{color:var(--neg)}
+.ad{border:1px dashed #3a3a3f;border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;color:var(--mute);font-size:13px;margin:20px 0}
+.ad b{display:block;color:#6d6a64;font-weight:600;font-size:12px}
+.ad button{background:none;border:0;color:var(--gold2);cursor:pointer;font-weight:700;font-size:13px;min-height:40px}
+.gtitle{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding:24px 0 16px}
+.gtitle h1{margin:0}
+.sync{font-size:13px;color:var(--mute);display:inline-flex;align-items:center;gap:6px}
+.sync::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--pos)}
+.sync.local::before{background:var(--gold)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.actions .btn{flex:1 1 180px}
+section.panel{margin-bottom:20px}
+.foot{color:#6d6a64;font-size:13px;padding:30px 0 40px;border-top:1px solid var(--line);margin-top:20px}
+/* sheet */
+.sheet{position:fixed;inset:0;z-index:20;display:none;align-items:flex-end;justify-content:center;background:#000000b3;backdrop-filter:blur(3px)}
+.sheet.open{display:flex}
+.sheet .box{width:min(560px,100%);max-height:92vh;overflow-y:auto;background:var(--s1);border:1px solid var(--line);border-radius:22px 22px 0 0;padding:22px max(4vw,18px) calc(22px + env(safe-area-inset-bottom))}
+@media(min-width:700px){.sheet{align-items:center}.sheet .box{border-radius:22px}}
+.sheet h2{font:500 26px/1.1 'Bodoni Moda',serif}
+.splitrow{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:10px;align-items:center;padding:6px 0}
+.splitrow input{min-height:44px;padding:8px 12px;text-align:right}
+.check{display:flex;align-items:center;gap:12px;min-height:44px;cursor:pointer;font-weight:600;color:var(--ink);margin:0}
+.check input{width:22px;height:22px;min-height:0;accent-color:var(--gold)}
+.feat{list-style:none;padding:0;margin:0 0 18px}
+.feat li{padding:10px 0 10px 28px;position:relative;border-top:1px solid var(--line)}
+.feat li::before{content:"";position:absolute;left:4px;top:18px;width:12px;height:7px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
+.price{font:500 40px/1 'Bodoni Moda',serif;color:var(--gold2);margin:4px 0 16px}
+.big{font:700 clamp(40px,10vw,64px)/1 Manrope,sans-serif;color:var(--gold2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:12px;font-weight:700;font-size:15px;opacity:0;pointer-events:none;transition:.25s;z-index:30;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.note{font-size:14px;color:var(--mute);background:var(--s2);border-radius:12px;padding:12px 14px}
+@media(max-width:600px){.stats{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.stats .stat:last-child{grid-column:1/-1}}
+.mine{position:relative;margin:0 0 8px;padding-bottom:14px;border-bottom:1px solid #ffffff12}
+.mine span{display:block;font-size:13px;color:var(--mute);font-weight:600}
+.mine strong{font:700 clamp(30px,7vw,42px)/1.1 Manrope,sans-serif;font-variant-numeric:tabular-nums}
+.debt.me{background:linear-gradient(90deg,#c9a45c14,transparent);margin:0 -12px;padding-inline:12px;border-radius:12px}
+.debt .btns{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
+.btn-sm.armed{background:var(--neg);border-color:var(--neg);color:#1a0f0d}
+.mebar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 16px}
+.mebar label{margin:0}
+.mebar select{width:auto;min-width:150px;min-height:44px;padding:8px 12px}
+.badge{display:inline-block;margin-left:8px;font-size:12px;font-weight:700;color:#15120b;background:var(--gold2);border-radius:999px;padding:2px 8px;vertical-align:2px}
+.note.warn{border:1px solid #5a4a2a;color:var(--gold2)}
+details.mem{border-top:1px solid var(--line);padding:6px 0}
+details.mem summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:700;list-style:none}
+details.mem summary::after{content:"›";margin-left:auto;color:var(--mute);transition:.2s}
+details.mem[open] summary::after{transform:rotate(90deg)}
+details.mem .field{margin-bottom:10px}
+@media(prefers-reduced-motion:no-preference){.card{animation:rise .6s ease-out}@keyframes rise{from{opacity:0;transform:translateY(14px) rotate(-1deg)}}}
+
+/* site pages */
+.foot nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:10px}
+.foot nav a{color:var(--mute);text-decoration:none;min-height:32px;display:inline-flex;align-items:center}
+.foot nav a:hover{color:var(--gold2)}
+.prose{max-width:68ch;padding:clamp(24px,5vw,48px) 0}
+.prose h1{margin-bottom:16px}
+.prose h2{font:500 26px/1.2 "Bodoni Moda",serif;margin:36px 0 10px}
+.prose h3{font-size:18px;margin:24px 0 6px}
+.prose p,.prose li{color:#d9d3c7}
+.prose ol,.prose ul{padding-left:1.3em}
+.prose li{margin:6px 0}
+.prose .lead{margin-bottom:22px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:26px 0}
+.example{margin:22px 0}
+.faq details{border-top:1px solid var(--line);padding:4px 0}
+.faq summary{cursor:pointer;font-weight:700;min-height:48px;display:flex;align-items:center}
+.faq details p{margin:0 0 14px}
+.crumbs{font-size:14px;color:var(--mute);padding-top:20px}
+.crumbs a{color:var(--mute)}
